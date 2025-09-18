@@ -49,11 +49,11 @@ cmake_ninja_workdir = /workspaces/coding/build/
 
 build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
 
-build CMakeFiles/main.dir/cmain.c.o: C_COMPILER__main_unscanned_Debug /workspaces/coding/cmain.c || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/cmain.c.o.d
+build CMakeFiles/main.dir/c_codes/cmain.c.o: C_COMPILER__main_unscanned_Debug /workspaces/coding/c_codes/cmain.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/c_codes/cmain.c.o.d
   FLAGS = -g -Wall -Werror
   OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/c_codes
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/main.dir/cmain.c.o: C_COMPILER__main_unscanned_Debug /workspace
 #############################################
 # Link the executable main
 
-build main: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/cmain.c.o
+build main: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/c_codes/cmain.c.o
   FLAGS = -g
   LINK_LIBRARIES = -lm
   OBJECT_DIR = CMakeFiles/main.dir
