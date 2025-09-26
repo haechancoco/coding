@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/workspaces/coding/build",
-  "command": "/usr/bin/clang -g -Wall -Werror -o CMakeFiles/main.dir/c_codes/cmain.c.o -c /workspaces/coding/c_codes/cmain.c",
-  "file": "/workspaces/coding/c_codes/cmain.c",
-  "output": "CMakeFiles/main.dir/c_codes/cmain.c.o"
-}
-]

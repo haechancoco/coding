@@ -1,3 +1,0 @@
-/workspaces/coding/build/CMakeFiles/main.dir
-/workspaces/coding/build/CMakeFiles/edit_cache.dir
-/workspaces/coding/build/CMakeFiles/rebuild_cache.dir
