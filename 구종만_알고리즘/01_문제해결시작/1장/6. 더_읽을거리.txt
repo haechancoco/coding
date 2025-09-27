@@ -1,0 +1,9 @@
+1. Introduction to Algorithm
+    폭넓은 주제를 수학적으로 깔끔히 다룸.
+2. Programming Challenges
+    기초적인 알고리즘, 자료구조 소개
+3. The Art of computer Programming
+    가장 자세하고 폭넓은 설명.
+    어셈블리로 설명
+4. 프로그래밍 콘테스트 챌린징
+    다양하고 실용적인 테크닉

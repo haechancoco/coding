@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} ./c_codes/cmain.c )
+add_executable(${PROJECT_NAME} ./c_codes/src/cmain.c )
 # add_library()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE m)

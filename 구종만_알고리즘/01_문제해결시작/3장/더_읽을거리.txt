@@ -1,0 +1,10 @@
+Clean Code:
+    변수, 함수, 명명법
+    함수 구성법
+    주석 쓰는법
+
+
+실수(floating point)에 대한 추가적 정보:
+    http://links.algospot.com/comparingfloats
+    http://links.algospot.com/fp-arithmetic
+    http://floating-point-gui.de/
