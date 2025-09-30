@@ -1,6 +1,6 @@
 typedef struct stack S_ST;
 
-struct stack *stack_create(void);
+struct stack *stack_create(int size);
 void push(struct stack *stack, int num);
 int pop(struct stack *stack);
 int size(struct stack *stack);
