@@ -1,3 +1,0 @@
-/workspaces/coding/ninja/CMakeFiles/main.dir
-/workspaces/coding/ninja/CMakeFiles/edit_cache.dir
-/workspaces/coding/ninja/CMakeFiles/rebuild_cache.dir
