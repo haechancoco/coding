@@ -47,13 +47,22 @@ int pop(struct stack *stack) {
   return stack->arr[stack->top];
 }
 // size: 스택에 들어있는 정수의 개수를 출력한다.
-int size(struct stack *stack) { return stack->top; }
+int length(struct stack *stack) { return stack->top; }
 // empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
 int empty(struct stack *stack) { return stack->top == 0 ? 1 : 0; }
 // top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는
 // 경우에는 -1을 출력한다.
 int top(struct stack *stack) {
   return stack->top == 0 ? -1 : stack->arr[stack->top - 1];
+}
+
+// stack_free(&stack) 형식으로 사용. 
+// 스텍을 반환하고 NULL로 초기화한다.
+void stack_free(S_ST **stack) {
+  S_ST *s = *stack;
+  free(s->arr);
+  s->arr = NULL;
+  *stack = NULL;
 }
 
 /*

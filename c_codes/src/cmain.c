@@ -14,15 +14,14 @@
 
 #include "../c_libs/stack.h"
 
+
+
 int main(void) {
 
   return 0;
 }
 
-int *get_combination(int *target, size_t n, S_ST *stack) {
-  // 기저 사례1: 수열이 다르면 종료
 
-}
 
 
 

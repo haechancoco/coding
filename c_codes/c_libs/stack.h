@@ -3,9 +3,11 @@ typedef struct stack S_ST;
 struct stack *stack_create(int size);
 void push(struct stack *stack, int num);
 int pop(struct stack *stack);
-int size(struct stack *stack);
+int length(struct stack *stack);
 int empty(struct stack *stack);
 int top(struct stack *stack);
+void stack_free(S_ST **stack);
+
 
 
 
