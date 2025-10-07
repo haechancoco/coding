@@ -1,0 +1,6 @@
+/workspaces/coding/c_codes/c_build/CMakeFiles/main.dir
+/workspaces/coding/c_codes/c_build/CMakeFiles/edit_cache.dir
+/workspaces/coding/c_codes/c_build/CMakeFiles/rebuild_cache.dir
+/workspaces/coding/c_codes/c_build/c_codes/c_libs/CMakeFiles/my_lib.dir
+/workspaces/coding/c_codes/c_build/c_codes/c_libs/CMakeFiles/edit_cache.dir
+/workspaces/coding/c_codes/c_build/c_codes/c_libs/CMakeFiles/rebuild_cache.dir

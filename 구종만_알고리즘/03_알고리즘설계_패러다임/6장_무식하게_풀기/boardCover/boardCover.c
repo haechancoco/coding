@@ -21,6 +21,11 @@ bool set(S_B *board, int y, int x, int type, int delta);
 int cover(S_B *board);
 
 int main(void) {
+  S_B *board = board_create(3, 7);
+  get_board(board);
+  check_board(board);
+
+  printf("%d\n", cover(board));  
 
   return 0;
 }
@@ -35,13 +40,14 @@ bool set(S_B *board, int y, int x, int type, int delta) {
   for (int i = 0; i < STYPENUM; ++i) {
     const int ny = y + coverType[type][i][0];
     const int nx = x + coverType[type][i][1];
-    if (ny < 0 || ny >= board->ylen || nx < 0 || nx >= board->xlen) {
+    if (ny < 0 || ny >= gylen(board) || nx < 0 || nx >= gxlen(board)) {
       ok = false;
     }
-    else if ((board->b[ny][nx] += delta) > 1) {
+    else if (sele(board, ny, nx, gele(board, ny, nx) + delta) > 1) {
       ok = false;
     }
   }
+  check_board(board);
   return ok;
 }
 
@@ -52,9 +58,9 @@ bool set(S_B *board, int y, int x, int type, int delta) {
 int cover(S_B *board) {
   // 아직 채우지 못한 칸 중 가장 위줄 왼쪽에 있는 칸을 찾는다.
   int y = -1, x = -1;
-  for (int i = 0; i < board->ylen; ++i) {
-    for (int j = 0; j < board->xlen; ++j) {
-      if (board->b[i][j] == 0) {
+  for (int i = 0; i < gylen(board); ++i) {
+    for (int j = 0; j < gxlen(board); ++j) {
+      if (gele(board, i, j) == 0) {
         y = i;
         x = j;
         break;

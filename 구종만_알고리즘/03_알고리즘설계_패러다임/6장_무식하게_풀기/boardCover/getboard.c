@@ -36,7 +36,7 @@ H: 3, W: 7
 #define YMAX 20
 typedef struct board {
 
-  char b[YMAX][XMAX + 1];
+  char **arr;
   int ylen;
   int xlen;
 } S_B;
@@ -44,6 +44,11 @@ typedef struct board {
 static void board_init(S_B *board, int ylen, int xlen) {
   board->ylen = ylen;
   board->xlen = xlen;
+  board->arr = malloc(ylen * sizeof(char*));
+  board->arr[0] = malloc(ylen * xlen * sizeof(char));
+  for (int i = 1; i < ylen; i++) {
+    board->arr[i] = board->arr[i - 1] + xlen;
+  }
 }
 
 // 보드를 생성한다. 
@@ -60,15 +65,24 @@ void get_board(S_B *board) {
 
   // 일단 문자열 그대로 입력받는다.
   for (int i = 0; i < YLEN; ++i) {
-    scanf("%s", board->b[i]);
+    scanf("%s", board->arr[i]);
   }
 
   // '#'이 검은 칸, '.'이 흰 칸.
   for (int i = 0; i < YLEN; ++i) {
     for (int j = 0; j < XLEN; ++j) {
-      board->b[i][j] = board->b[i][j] == '#' ? 1 : 0;
+      board->arr[i][j] = board->arr[i][j] == '#' ? 1 : 0;
     }
   }
+}
+
+void board_free(S_B **board) {
+  S_B *b = *board;
+  free(b->arr[0]);
+  free(b->arr);
+  b->arr = NULL;
+  free(b);
+  *board = NULL;
 }
 
 void check_board(S_B *board) {
@@ -77,10 +91,21 @@ void check_board(S_B *board) {
 
   for (int i = 0; i < YLEN; ++i) {
     for (int j = 0; j < XLEN; ++j) {
-      printf("%d ", board->b[i][j]);
+      printf("%d ", board->arr[i][j]);
     }
     printf("\n");
   }
+  printf("\n");
+}
+
+int sele(S_B *board, int y, int x, int ele) {
+  board->arr[y][x] = ele;
+  return ele;
+}
+
+
+int gele(S_B *board, int y, int x) {
+  return board->arr[y][x];
 }
 
 int gylen(S_B *board) {
@@ -91,6 +116,7 @@ int gxlen(S_B *board) {
   return board->xlen;
 }
 
+#ifdef TEST_GETBOARD
 int main(void) {
   S_B *b = board_create(3, 7);
   get_board(b);
@@ -98,3 +124,4 @@ int main(void) {
 
   return 0;
 }
+#endif
