@@ -1,6 +1,6 @@
 # coding
 learning coidng
-[씹어먹는 c++](https://modoocode.com/187#google_vignette)
+[씹어먹는 c++](https://modoocode.com/187#google_vignette)  
 [공대도서관 쉽코딩](https://easycode.tistory.com/7)
 
 # (구종만) 알고리즘 문재해결 전략.
