@@ -1,0 +1,164 @@
+출처: https://google.github.io/styleguide/cppguide.html#Naming
+
+파일 이름:
+	파일 이름은 모두 소문자여야 하며 밑줄( _)이나 대시( -)를 포함할 수 있습니다.
+  일관된 로컬 규칙이 없는 경우 " _"를 사용하는 것이 좋습니다.
+
+  파일 이름 예:
+    my_useful_class.cc
+    my-useful-class.cc
+    myusefulclass.cc
+    myusefulclass_test.cc // _unittest and _regtest are deprecated.
+
+타입 이름:
+  타입 이름은 대문자로 시작하고 밑줄 없이 새 단어마다 대문자를 사용합니다.
+
+  클래스, 구조체, 타입 별칭, 열거형, 타입 템플릿 매개변수 등 모든 타입의 이름은 동일한 명명 규칙을
+  따릅니다. 타입 이름은 대문자로 시작해야 하며, 각 단어마다 대문자를 사용해야 합니다. 밑줄은 사용하지
+  않습니다.
+  
+  타입 이름 예:
+    // 클래스 and 구조체
+    class UrlTable { ...
+    class UrlTableTester { ...
+    struct UrlTableProperties { ...
+
+    // typedefs
+    typedef hash_map<UrlTableProperties *, std::string> PropertiesMap;
+
+    // using aliases
+    using PropertiesMap = hash_map<UrlTableProperties *, std::string>;
+
+    // enums
+    enum class UrlTableError { ...
+
+Concept 이름:
+  타입 이름과 같은 규칙을 따른다.
+
+변수 이름:
+  변수(함수 매개변수 포함)와 데이터 멤버의 이름은 snake_case모두 소문자이며, 단어 사이에는
+  밑줄을 사용합니다. 클래스(구조체 제외)의 데이터 멤버는 끝에 밑줄을 붙입니다.
+  
+  예:
+    a_local_variable
+    a_struct_data_member
+    a_class_data_member_
+
+
+  클래스 멘버 변수:
+    클래스의 데이터 멤버는 정적이든 비정적이든 일반 비멤버 변수와 같은 이름을 가지지만, 끝에
+    밑줄이 붙습니다. 단, 정적 상수 클래스 멤버는 예외이며, 상수 이름 지정 규칙을 따라야 합니다 .
+
+    예:
+      class TableInfo { 
+        public: 
+          ... 
+          static const int kTableVersion = 3; // OK - 상수 이름 지정. 
+          ... 
+
+        private: 
+          std::string table_name_; // OK - 끝에 밑줄. 
+          static Pool<TableInfo>* pool_; // OK. 
+        };
+
+  구조체 멘버 변수:
+    정적이든 비정적이든 구조체의 데이터 멤버는 일반적인 비멤버 변수와 같은 이름을 갖습니다. 클래스의
+    데이터 멤버처럼 끝에 언더스코어가 붙지 않습니다.
+
+    예:
+      struct UrlTableProperties {
+        std::string name;
+        int num_entries;
+        static Pool<UrlTableProperties>* pool;
+      };
+
+상수 이름:
+  constexpr 또는 const 로 선언되고 프로그램 실행 시간 동안 값이 고정되는 변수는 "k"로 시작하고 그
+  뒤에 대소문자를 혼합하여 이름을 지정합니다. 대문자로 구분할 수 없는 드문 경우에는 밑줄을 구분
+  기호로 사용할 수 있습니다.
+  
+  예:
+    const int kDaysInAWeek = 7;
+    const int kAndroid8_0_0 = 24;  // Android 8.0.0
+
+  정적 저장 기간을 가진 모든 변수(즉, 정적 변수와 전역 변수, 자세한 내용은 저장 기간 참조 )는 이러한
+  방식으로 명명해야 합니다. 여기에는 정적 상수 클래스 데이터 멤버 변수와 템플릿의 인스턴스마다 값이
+  다를 수 있는 템플릿의 변수도 포함됩니다. 이 규칙은 다른 저장 클래스 변수(예: 자동 변수)의 경우
+  선택 사항입니다. 그렇지 않은 경우 일반적인 변수 명명 규칙이 적용됩니다.
+  
+  예를 들어 다음과 같습니다: ???
+    void ComputeFoo(absl::string_view suffix) { 
+      // 둘 다 허용됩니다. 
+      const absl::string_view kPrefix = "prefix"; 
+      const absl::string_view prefix = "prefix"; 
+      ... 
+    }
+    void ComputeFoo(absl::string_view suffix) { 
+      // 나쁨 - ComputeFoo를 다르게 호출하면 kCombined에 다른 값이 부여됩니다. 
+      const std::string kCombined = absl::StrCat(kPrefix, suffix); 
+        ...
+    }
+
+함수 이름:
+  일반적으로 함수는 PascalCase를 따릅니다 . 즉, 대문자로 시작하고 새 단어마다 대문자를 붙입니다.
+
+  예:
+    AddTableEntry() 
+    DeleteUrl() 
+    OpenFileOrDie()
+
+네임스페이스 이름:
+  네임스페이스 이름은 snake_case(모두 소문자, 단어 사이에 밑줄 포함)입니다.
+
+  네임스페이스에 대한 이름을 선택할 때 네임스페이스 외부의 헤더에서 사용할 때는 이름이 완전히
+  정규화되어야 한다는 점에 유의하세요. 정규화되지 않은 별칭은 일반적으로 금지됩니다 .
+
+  최상위 네임스페이스는 전역적으로 고유하고 인식 가능해야 하므로, 각 네임스페이스는 단일 프로젝트
+  또는 팀에서 소유해야 하며, 해당 프로젝트 또는 팀의 이름을 기반으로 이름이 지정되어야 합니다.
+  일반적으로 네임스페이스의 모든 코드는 네임스페이스와 동일한 이름을 가진 하나 이상의 디렉터리에
+  있어야 합니다.
+
+  중첩된 네임스페이스는 잘 알려진 최상위 네임스페이스의 이름, 특히 std 및 absl 를 피해야 합니다.
+  C++에서 중첩된 네임스페이스는 다른 네임스페이스의 이름과의 충돌을 보호하지 못하기
+  때문입니다( TotW #130 참조 ).
+
+열거자 이름:
+  열거자(범위가 지정된 열거형과 범위가 지정되지 않은 열거형 모두)는 매크로가 아닌 상수 처럼 이름을
+  지정해야 합니다 . 즉, ENUM_NAME 가 아닌 kEnumName 을 사용합니다.
+
+  예:
+    enum class UrlTableError {
+      kOk = 0,
+      kOutOfMemory,
+      kMalformedInput,
+    };
+ 
+매크로 이름:
+  매크로를 직접 정의할 생각은 없겠죠? 만약 정의한다면 다음과 같습니다
+  MY_MACRO_THAT_SCARES_SMALL_CHILDREN_AND_ADULTS_ALIKE.
+
+  매크로 설명을 참조하세요. 일반적으로 매크로는 사용해서는 안 됩니다 . 하지만 꼭 필요한 경우에는
+  매크로 이름을 모두 대문자와 밑줄로 작성하고 프로젝트별 접두사를 붙여야 합니다.
+
+  예:
+    #define MYPROJECT_ROUND(x) ...
+
+별칭(Aliases) 이름:
+  별칭 의 이름은 다른 새 이름과 동일한 원칙을 따르며, 원래 이름이 나타나는 곳이 아닌 별칭이 정의된
+  맥락에서 적용됩니다.
+
+
+명명 규칙의 예외:
+  기존 C 또는 C++ 엔터티와 유사한 이름을 지정하는 경우 기존 명명 규칙 체계를 따를 수 있습니다.
+
+  예:
+    bigopen()
+      open() 의 형식을 다르는 함수 이름.
+    uint
+      typedef
+    bigpos
+      pos 의 형식을 따르는 구조체 or 클래스
+    sparse_hash_map
+      STL과 유사한 엔터티; STL 명명 규칙을 따릅니다.
+    LONGLONG_MAX
+      상수, 즉 INT_MAX 같은.

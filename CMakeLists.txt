@@ -19,7 +19,7 @@ cmake_minimum_required(VERSION 3.28)
 # 실행 파일
   add_executable(main ${CMAKE_SOURCE_DIR}/c_codes/src/cmain.c)
 
-# main 에 stack 를 링크 
+# main 에 my_lib 를 링크 
   target_link_libraries(main my_lib)
 
 # main 를 컴파일 할 옵션 설정.

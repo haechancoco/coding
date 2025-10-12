@@ -1,107 +1,81 @@
-#include <stdbool.h>
-#include <stdlib.h>
+#include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#define N 3000007
 
-typedef struct stack {
-  int *arr;
-  int top;
-  int size;
-} S_ST;
+int main() {
+  int num[8001] = {0};
+  int t, flag, i, n = 0, avg = 0, mid = 0, mode = 0, range = 0, count = 0;
+  char *buf = (char *)calloc(N, sizeof(char));
+  char *c = buf;
 
-struct stack *stack_create(int size);
-void push(struct stack *stack, int num);
-int pop(struct stack *stack);
-int empty(struct stack *stack);
-int top(struct stack *stack);
+  ssize_t l = read(0, buf, N);
 
-int main(void) {
-  int n;
-  scanf("%d", &n);
-
-  int seq[n];
-  int check = 0;
-  for (int i = 0; i < n; i++) {
-    scanf("%d", seq + i);
+  while (*c != '\n') {
+    n *= 10;
+    n += (*c - '0');
+    ++c;
   }
-  
-  int in = 1;
-  S_ST *s = stack_create(n);
-  const int RESULT_SIZE = 2 * n;
-  char result[RESULT_SIZE];
-  int ridx = 0;
-  while (in <= n) {
-    if (top(s) != seq[check]) {
-      push(s, in++);
-      result[ridx++] = '+';
-    } else {
-      check++;
-      pop(s);
-      result[ridx++] = '-';
+  ++c;
+
+  while (c < buf + l - 1) {
+    flag = 1;
+    t = 0;
+
+    if (*c == '-') {
+      flag = -1;
+      ++c;
     }
-    // printf("%c\n", result[ridx - 1]);
-  }
 
-  while (top(s) == seq[check++]) {
-    pop(s);
-    result[ridx++] = '-';
-  }
-
-  if (empty(s)) {
-    // printf("\n\nresult:\n");
-    for (int i = 0; i < RESULT_SIZE; ++i) {
-      printf("%c\n", result[i]);
+    while (*c != '\n') {
+      t *= 10;
+      t += (*c - '0');
+      ++c;
     }
-  } else {
-    printf("NO\n");
+    ++c;
+
+    t *= flag;
+
+    avg += t;
+    ++num[t + 4000];
   }
-  return 0;
-}
+  free(buf);
 
-
-
-
-// stack 초기와 함수.
-static void stack_init(struct stack *stack, int size) {
-  stack->arr = malloc(size * sizeof(int));
-  stack->top = 0;
-  stack->size = size;
-}
-
-// stack을 만들어서 주소를 반환한다.
-struct stack *stack_create(int size) {
-  struct stack *new = malloc(sizeof(struct stack));
-  stack_init(new, size);
-  return new;
-}
-
-// push X: 정수 X를 스택에 넣는 연산이다.
-void push(struct stack *stack, int num) {
-  stack->arr[stack->top++] = num;
-}
-// pop: 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에
-// 들어있는 정수가 없는 경우에는 -1을 출력한다.
-int pop(struct stack *stack) {
-  if (empty(stack)) {
-    return -1;
+  // mid 구하기
+  t = 0;
+  for (i = 0; i < 8001; ++i) {
+    t += num[i];
+    if (t > n / 2) {
+      mid = i - 4000;
+      break;
+    }
   }
-  stack->top--;
-  return stack->arr[stack->top];
-}
-// size: 스택에 들어있는 정수의 개수를 출력한다.
-int length(struct stack *stack) { return stack->top; }
-// empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
-int empty(struct stack *stack) { return stack->top == 0 ? 1 : 0; }
-// top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는
-// 경우에는 -1을 출력한다.
-int top(struct stack *stack) {
-  return stack->top == 0 ? -1 : stack->arr[stack->top - 1];
-}
 
-// stack_free(&stack) 형식으로 사용. 
-// 스텍을 반환하고 NULL로 초기화한다.
-void stack_free(S_ST **stack) {
-  S_ST *s = *stack;
-  free(s->arr);
-  s->arr = NULL;
-  *stack = NULL;
+  // mode 구하기
+  for (i = 0; i < 8001; ++i) {
+    if (count < num[i]) {
+      count = num[i];
+      mode = i - 4000;
+      flag = 0;
+    } else if (count == num[i] && count && !flag) {
+      mode = i - 4000;
+      flag = 1;
+    }
+  }
+
+  // range 구하기
+  for (i = 8000; i >= 0; --i)
+    if (num[i])
+      break;
+
+  range = i - 4000;
+
+  for (i = 0; i < 8001; ++i)
+    if (num[i])
+      break;
+
+  range -= i - 4000;
+
+  printf("%lld\n%d\n%d\n%d", llround((double)avg / n), mid, mode, range);
 }

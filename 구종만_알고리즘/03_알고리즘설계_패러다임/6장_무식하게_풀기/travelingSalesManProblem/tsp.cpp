@@ -1,0 +1,46 @@
+// 예행하는 외판원 문제 (Traveling Salesman Problem, TSP)
+/* 
+어떤 나라에 n (1 <= n <= 10) 개의 큰 도시가 있다고 합시다.
+한 영업 사원이 한 도시에서 출발해 다른 도시들을 전부 한 번씩 방문한 뒤
+시작 도시로 돌아오려 한다.
+
+도시는 모두 직선 도로로 연결되어있다.
+이때 가능한 경로중 가장 짧은 경로를 구하시오.
+*/
+#include <iostream>
+#include <vector>
+
+#define MAX 10
+#define INF ~0U>>2
+
+
+int n; // 도시의 수.
+double dist[MAX][MAX]; // 두 도시 간의 거리를 저장하는 배열.
+// path: 지금까지 만든 경로
+// visited: 각 도시의 방문 여부
+// currentLength: 지금까지 만든 경로의 길이
+// 나머지 도시들을 모두 방문하는 경로들 중 가장 짧은 것의 길이를 반환한다.
+double shortestPath(std::vector<int>& path, std::vector<bool>& visited, double currentLength) {
+  // 기저 사례: 모든 도시를 다 방문했을 때는 시작 도시로 돌아가고 종료한다.
+  if (path.size() == n) {
+    return currentLength + dist[path[0]][path.back()];
+  }
+  double ret = INF; // 매우 큰 값으로 초기화.
+  // 다음 방문할 도시를 전부 시도해 본다.
+  for (int next = 0; next < n; ++next) {
+    if (visited[next]) continue;
+    int here = path.back();
+    path.push_back(next);
+    visited[next] = true;
+    // 나머지 경로를 재귀 호출을 통해 완성하고 가장 짧은 경로의 길이를 얻는다.
+    double cand = shortestPath(path, visited, currentLength + dist[here][next]);
+    ret = std::min(ret, cand);
+    path.pop_back();
+  }
+  return ret;
+}
+
+int main(void) {
+
+    return 0;
+}
