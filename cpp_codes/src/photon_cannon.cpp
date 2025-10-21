@@ -14,7 +14,7 @@ class Photon_Cannon {
     ~Photon_Cannon();                                       // 소멸자
     Photon_Cannon(const Photon_Cannon& pc);                 // 복사 생성자
     Photon_Cannon(int x, int y);                            // x, y 좌표에 포토케논 생성
-    Photon_Cannon(int x, int y, const char* cannon_name);   // x, y좌표설정과 이름설정.
+    Photon_Cannon(int x, int y, const char* cannon_name);   // x, y좌표설정과 이름설정
     
     void show_status(void);   // 상태를 보여준다.
   };

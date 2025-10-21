@@ -73,71 +73,71 @@ c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o: c_codes/c_libs/CMakeFil
 c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o: /workspaces/coding/c_codes/c_libs/circular_queue.c
 c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o -MF CMakeFiles/my_lib.dir/circular_queue.c.o.d -o CMakeFiles/my_lib.dir/circular_queue.c.o -c /workspaces/coding/c_codes/c_libs/circular_queue.c
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.o -MF CMakeFiles/my_lib.dir/circular_queue.c.o.d -o CMakeFiles/my_lib.dir/circular_queue.c.o -c /workspaces/coding/c_codes/c_libs/circular_queue.c
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_lib.dir/circular_queue.c.i"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/circular_queue.c > CMakeFiles/my_lib.dir/circular_queue.c.i
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/circular_queue.c > CMakeFiles/my_lib.dir/circular_queue.c.i
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/circular_queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_lib.dir/circular_queue.c.s"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/circular_queue.c -o CMakeFiles/my_lib.dir/circular_queue.c.s
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/circular_queue.c -o CMakeFiles/my_lib.dir/circular_queue.c.s
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/flags.make
 c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o: /workspaces/coding/c_codes/c_libs/debug.c
 c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o -MF CMakeFiles/my_lib.dir/debug.c.o.d -o CMakeFiles/my_lib.dir/debug.c.o -c /workspaces/coding/c_codes/c_libs/debug.c
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.o -MF CMakeFiles/my_lib.dir/debug.c.o.d -o CMakeFiles/my_lib.dir/debug.c.o -c /workspaces/coding/c_codes/c_libs/debug.c
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_lib.dir/debug.c.i"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/debug.c > CMakeFiles/my_lib.dir/debug.c.i
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/debug.c > CMakeFiles/my_lib.dir/debug.c.i
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/debug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_lib.dir/debug.c.s"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/debug.c -o CMakeFiles/my_lib.dir/debug.c.s
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/debug.c -o CMakeFiles/my_lib.dir/debug.c.s
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/flags.make
 c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o: /workspaces/coding/c_codes/c_libs/hashmap.c
 c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o -MF CMakeFiles/my_lib.dir/hashmap.c.o.d -o CMakeFiles/my_lib.dir/hashmap.c.o -c /workspaces/coding/c_codes/c_libs/hashmap.c
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.o -MF CMakeFiles/my_lib.dir/hashmap.c.o.d -o CMakeFiles/my_lib.dir/hashmap.c.o -c /workspaces/coding/c_codes/c_libs/hashmap.c
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_lib.dir/hashmap.c.i"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/hashmap.c > CMakeFiles/my_lib.dir/hashmap.c.i
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/hashmap.c > CMakeFiles/my_lib.dir/hashmap.c.i
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/hashmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_lib.dir/hashmap.c.s"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/hashmap.c -o CMakeFiles/my_lib.dir/hashmap.c.s
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/hashmap.c -o CMakeFiles/my_lib.dir/hashmap.c.s
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/flags.make
 c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o: /workspaces/coding/c_codes/c_libs/queue.c
 c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o -MF CMakeFiles/my_lib.dir/queue.c.o.d -o CMakeFiles/my_lib.dir/queue.c.o -c /workspaces/coding/c_codes/c_libs/queue.c
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.o -MF CMakeFiles/my_lib.dir/queue.c.o.d -o CMakeFiles/my_lib.dir/queue.c.o -c /workspaces/coding/c_codes/c_libs/queue.c
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_lib.dir/queue.c.i"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/queue.c > CMakeFiles/my_lib.dir/queue.c.i
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/queue.c > CMakeFiles/my_lib.dir/queue.c.i
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_lib.dir/queue.c.s"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/queue.c -o CMakeFiles/my_lib.dir/queue.c.s
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/queue.c -o CMakeFiles/my_lib.dir/queue.c.s
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/flags.make
 c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o: /workspaces/coding/c_codes/c_libs/stack.c
 c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o: c_codes/c_libs/CMakeFiles/my_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o -MF CMakeFiles/my_lib.dir/stack.c.o.d -o CMakeFiles/my_lib.dir/stack.c.o -c /workspaces/coding/c_codes/c_libs/stack.c
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.o -MF CMakeFiles/my_lib.dir/stack.c.o.d -o CMakeFiles/my_lib.dir/stack.c.o -c /workspaces/coding/c_codes/c_libs/stack.c
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_lib.dir/stack.c.i"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/stack.c > CMakeFiles/my_lib.dir/stack.c.i
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/c_libs/stack.c > CMakeFiles/my_lib.dir/stack.c.i
 
 c_codes/c_libs/CMakeFiles/my_lib.dir/stack.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_lib.dir/stack.c.s"
-	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/stack.c -o CMakeFiles/my_lib.dir/stack.c.s
+	cd /workspaces/coding/c_codes/c_build/c_codes/c_libs && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/c_libs/stack.c -o CMakeFiles/my_lib.dir/stack.c.s
 
 # Object files for target my_lib
 my_lib_OBJECTS = \

@@ -1,0 +1,31 @@
+explicit: 암시적 변환(implicit conversion)을 막는다.
+
+mutable: const함수에서 mutable로 선언된 변수는 수정 가능하다.
+
+friend: 해당 함수나 클래스에서 현재의 클래스의 private영역에 접근 가능하다.
+
+자기 자신을 리턴하는 이항 연산자는 멤버 함수로,
+    아닌 애들은 외부 함수로 정의하는게 원칙이다.
+
+-----------------------------------------
+#include <iostream>
+
+class Int {
+  int data;
+  // some other data
+
+ public:
+  Int(int data) : data(data) {}
+  Int(const Int& i) : data(i.data) {}
+
+  operator int() { return data; }
+};
+int main() {
+  Int x = 3;
+  int a = x + 4;
+
+  x = a * 2 + x + 4;
+  std::cout << x << std::endl;
+}
+
+이거 왜 되는거임?

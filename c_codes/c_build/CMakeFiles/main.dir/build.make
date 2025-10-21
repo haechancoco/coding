@@ -73,15 +73,15 @@ CMakeFiles/main.dir/c_codes/src/cmain.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/c_codes/src/cmain.c.o: /workspaces/coding/c_codes/src/cmain.c
 CMakeFiles/main.dir/c_codes/src/cmain.c.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/coding/c_codes/c_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/c_codes/src/cmain.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/c_codes/src/cmain.c.o -MF CMakeFiles/main.dir/c_codes/src/cmain.c.o.d -o CMakeFiles/main.dir/c_codes/src/cmain.c.o -c /workspaces/coding/c_codes/src/cmain.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/c_codes/src/cmain.c.o -MF CMakeFiles/main.dir/c_codes/src/cmain.c.o.d -o CMakeFiles/main.dir/c_codes/src/cmain.c.o -c /workspaces/coding/c_codes/src/cmain.c
 
 CMakeFiles/main.dir/c_codes/src/cmain.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/c_codes/src/cmain.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/src/cmain.c > CMakeFiles/main.dir/c_codes/src/cmain.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/coding/c_codes/src/cmain.c > CMakeFiles/main.dir/c_codes/src/cmain.c.i
 
 CMakeFiles/main.dir/c_codes/src/cmain.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/c_codes/src/cmain.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/src/cmain.c -o CMakeFiles/main.dir/c_codes/src/cmain.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/coding/c_codes/src/cmain.c -o CMakeFiles/main.dir/c_codes/src/cmain.c.s
 
 # Object files for target main
 main_OBJECTS = \
