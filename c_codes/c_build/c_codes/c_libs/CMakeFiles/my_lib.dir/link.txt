@@ -1,2 +1,0 @@
-/usr/bin/llvm-ar qc libmy_lib.a CMakeFiles/my_lib.dir/circular_queue.c.o CMakeFiles/my_lib.dir/debug.c.o CMakeFiles/my_lib.dir/hashmap.c.o CMakeFiles/my_lib.dir/queue.c.o CMakeFiles/my_lib.dir/stack.c.o
-/usr/bin/llvm-ranlib libmy_lib.a

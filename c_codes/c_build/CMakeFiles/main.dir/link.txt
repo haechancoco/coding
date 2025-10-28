@@ -1,1 +1,0 @@
-/usr/bin/clang CMakeFiles/main.dir/c_codes/src/cmain.c.o -o main  c_codes/c_libs/libmy_lib.a 
