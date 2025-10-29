@@ -20,16 +20,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_subdirectory(cpp_code)
 
 # "c_code" 폴더로 내려가서 거기 있는 CMakeLists.txt를 실행
-add_subdirectory(c_code)
+# add_subdirectory(c_code)
 
 
-# 실행 파일
-  add_executable(main ${CMAKE_SOURCE_DIR}/c_codes/src/cmain.c)
+# # 실행 파일
+#   add_executable(main ${CMAKE_SOURCE_DIR}/c_codes/src/cmain.c)
 
-# main 에 my_lib 를 링크 
-  target_link_libraries(main my_lib)
+# # main 에 my_lib 를 링크 
+#   target_link_libraries(main my_lib)
 
-# main 를 컴파일 할 옵션 설정.
-  target_compile_options(main PUBLIC -Wall -Werror)
+# # main 를 컴파일 할 옵션 설정.
+#   target_compile_options(main PUBLIC -Wall -Werror)
 
 

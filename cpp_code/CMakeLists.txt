@@ -1,4 +1,6 @@
 # made by google gemini
+cmake_minimum_required(VERSION 3.28)
+
 project(CppProject CXX)
 
 # ----------------------------------------------------
@@ -8,7 +10,7 @@ project(CppProject CXX)
 file(GLOB EXCEL_SOURCES "src/excel/*.cpp")
 
 # "excel_lib" 라는 라이브러리를 만듦
-add_library(excel_lib &{EXCEL_SOURCES})
+add_library(excel_lib ${EXCEL_SOURCES})
 
 # (중요) "excel_lib" 에게 헤더 파일이 어디 있는지 알려줌
 # PUBLIC 키워드: "excel_lib" 자신도 'include' 폴더가 필요하고,
