@@ -19,14 +19,14 @@ target_include_directories(excel_lib PUBLIC lib)
 
 
 # 'my_app' 이라는 이름의 실행 파일을 만듦
-add_executable(my_app src/app/main.cpp)
+# add_executable(my_app src/app/main.cpp)
 
-# (가장 중요) "my_app"이 "excel_lib"를 사용하도록 연결(링크)
-# 이 한 줄로 my_app은 excel_lib의 모든 기능을 쓰고,
-# "include" 폴더 경로도 자동으로 인식하게 됩니다.
-target_link_libraries(my_app PRIVATE excel_lib)
+# # (가장 중요) "my_app"이 "excel_lib"를 사용하도록 연결(링크)
+# # 이 한 줄로 my_app은 excel_lib의 모든 기능을 쓰고,
+# # "include" 폴더 경로도 자동으로 인식하게 됩니다.
+# target_link_libraries(my_app PRIVATE excel_lib)
 
 # (참고) 만약 t2.cpp로 별도 실행 파일을 만들고 싶다면?
-# add_executable(my_app2 src/app/t2.cpp)
-# target_link_libraries(my_app2 PRIVATE excel_lib)
+add_executable(my_test1 src/test/t1.cpp)
+target_link_libraries(my_test1 PRIVATE excel_lib)
 

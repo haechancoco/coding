@@ -1,16 +1,20 @@
-#include <algorithm>
-#include "txt_table.hpp"
-#include "cell.hpp"
+#include <iostream>
+#include <algorithm>  // max() 사용을 위해 추가
+#include "excel/txt_table.hpp"
+#include "excel/cell.hpp"
 
 using namespace std;
 
 // private
+
+// c 를 n 번 반복한 문자열을 반환한다
 string TxtTable::repeat_char(int n, char c) {
   string s = "";
   for (int i = 0; i < n; ++i) s.push_back(c);
   
-  return 0;
+  return s;
 }
+// index 번호가 n 인 열의 이름을 반환한다. ex) n 이 0 이면 A, 2 이면 C 인 형식이다.
 string TxtTable::col_num_to_str(int n) {
   string s = "";
   if (n < 26) {
@@ -47,7 +51,7 @@ string TxtTable::print_table() {
     col_max_wide[i] = max_wide;
   }
   // 맨 상단에 열 정보 표시
-  total_table += "    ";
+  total_table += "    ";  // 맨 위 좌측 빈공간을 표현
   int total_wide = 4;
   for (int i = 0; i < m_max_col_size; ++i) {
     if (col_max_wide[i]) {

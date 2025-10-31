@@ -1,28 +1,31 @@
-#include "table.hpp"
-#include "cell.hpp"
+#include "excel/table.hpp"
+#include "excel/cell.hpp"
 using namespace std;
 
 
 
 Table::~Table() {
+  // 말단 Cell* 해제
   for (int i = 0; i < m_max_row_size; ++i) {
     for (int j = 0; j < m_max_col_size; ++j) {
       if (m_data_table[i][j]) delete m_data_table[i][j];
     }
   }
+  // Cell* 배열(열) 해제
   for (int i = 0; i < m_max_row_size; ++i) {
     delete[] m_data_table[i];
   }
+  // Cell** 배열(행) 해제
   delete[] m_data_table;
 }
 
 Table::Table(int max_row_size, int max_col_size)
     : m_max_row_size(max_row_size), m_max_col_size(max_col_size) {
-  m_data_table = new Cell**[m_max_row_size];
+  m_data_table = new Cell**[m_max_row_size];      // 행
   for (int i = 0; i < m_max_row_size; ++i) {
-    m_data_table[i] = new Cell*[m_max_col_size];
+    m_data_table[i] = new Cell*[m_max_col_size];  // 열
     for (int j = 0; j < m_max_col_size; ++j) {
-      m_data_table[i][j] = NULL;
+      m_data_table[i][j] = nullptr;
     }
   }
 }
