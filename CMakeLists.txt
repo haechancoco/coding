@@ -2,7 +2,10 @@
 cmake_minimum_required(VERSION 3.28)
 
 # 프로젝트 정보
-project(MyLearningRoot)
+project(
+  MyLearningRoot
+  LANGUAGES C CXX
+)
 # 3. (중요) clangd를 위한 .json 파일 생성 설정
 # 이 설정을 맨 위에 두면 모든 하위 프로젝트에 적용됩니다.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
