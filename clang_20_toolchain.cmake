@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.28)
 
-message(STATUS "Loading Custom Toolchain: Clang")
+message(STATUS "Loading Custom Toolchain: Clang_20")
 
 # 컴파일러 설정
   # 호환성 버전으로 작성

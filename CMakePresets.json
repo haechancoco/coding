@@ -1,0 +1,27 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "clang-20-debug",
+      "displayName": "Clang 20 (Debug)",
+      "description": "Clang 20 컴파일러와 툴체인 파일을 사용한 디버그 빌드",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/clang-debug",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/clang_20_toolchain.cmake",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "clang-20-release",
+      "displayName": "Clang 20 (Release)",
+      "description": "Clang 20 컴파일러를 사용한 릴리즈 빌드",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/clang-release",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/clang_20_toolchain.cmake",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}

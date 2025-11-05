@@ -15,7 +15,13 @@ add_library(excel_lib ${EXCEL_SOURCES})
 # (중요) "excel_lib" 에게 헤더 파일이 어디 있는지 알려줌
 # PUBLIC 키워드: "excel_lib" 자신도 'include' 폴더가 필요하고,
 #               나중에 "excel_lib"를 쓰는 대상(my_app) 도 'include' 폴더가 필요함
-target_include_directories(excel_lib PUBLIC lib)
+target_include_directories(excel_lib PUBLIC ./include)
+
+
+# ".hpp" 와 ".tpp" 를 포함하는 "include" 디렉터리를 가진 헤더 전용 라이브러리를 정의한다.
+add_library(MyTemplateLib INTERFACE)
+# 이 라이브러리를 사용하는 대상에게 "include" 디렉터리를 inlclude 경로로 전달한다
+target_link_directories(MyTemplateLib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 # 'my_app' 이라는 이름의 실행 파일을 만듦
@@ -27,6 +33,6 @@ target_include_directories(excel_lib PUBLIC lib)
 # target_link_libraries(my_app PRIVATE excel_lib)
 
 # (참고) 만약 t2.cpp로 별도 실행 파일을 만들고 싶다면?
-add_executable(my_test1 src/test/t1.cpp)
-target_link_libraries(my_test1 PRIVATE excel_lib)
+add_executable(t1 src/test/t1.cpp)
+target_link_libraries(t1 PRIVATE excel_lib MyTemplateLib)
 

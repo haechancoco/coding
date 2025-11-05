@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "../../lib/excel/excel.hpp"
+#include "excel/excel.hpp"
 
 using namespace std;
 
