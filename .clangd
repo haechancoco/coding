@@ -1,0 +1,20 @@
+Diagnostics:
+  ClangTidy:
+    Add: [
+      clang-analyzer-*,
+      readability-*,
+      modernize-*,
+      performance-*,
+      bugprone-*,
+    ]
+    HeaderFilterRegex: '.*'
+    AnalyzeTemporaryDtors: true
+
+
+---
+
+If:
+  PathMatch: .*\.tpp
+CompileFlags:
+  Add: [-x, c++-header]
+

@@ -62,7 +62,7 @@ string Table::stringify(const string& s) {
       return m_data_table[row][col]->stringify();
     }
   }
-  return 0;
+  return "";
 }
 string Table::stringify(int row, int col) {
   if (row < m_max_row_size && col < m_max_col_size && m_data_table[row][col]) {

@@ -1,6 +1,18 @@
 // ✅ 올바른 코드
 {
+  // clang intellisense와 충동하지 않도록 
+  // Micorsoft C/C++ extension 의 IntelliSense 엔진을 비활성화한다. 
+  "C_Cpp.intelliSenseEngine": "disabled",
+
+  // CMake Tools가 clangd와 디버거 모두에게
+  // 올바른 compile_commands.json 위치를 알려주도록 합니다.
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+
   "clangd.arguments": [
-    "--compile-commands-dir=${workspaceFolder}/build"
-  ]
+    "--compile-commands-dir=${onCommand:cmake.buildDirectory}"
+  ],
+
+  "files.associations": {
+    "*.tpp": "cpp"
+  }
 }

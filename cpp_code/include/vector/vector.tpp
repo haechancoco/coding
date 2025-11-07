@@ -1,5 +1,4 @@
-#ifndef VECTOR_TPP
-#define VECTOR_TPP
+#include "vector.hpp"
 
 // 소멸자, 생성자
 template <typename T>
@@ -31,7 +30,7 @@ void Vector<T>::push_back(T s) {
 }
 // 임이의 위치의 원소에 접근한다.
 template <typename T>
-T Vector<T>::operator[](int i) {
+T& Vector<T>::operator[](int i) {
   return m_data[i];
 }
 // x 번째 위치한 원소를 제거한다.
@@ -47,5 +46,3 @@ template <typename T>
 int Vector<T>::size() {
   return m_length;
 }
-
-#endif
