@@ -1,4 +1,4 @@
-#include "vector.hpp"
+// #include "vector.hpp"
 
 // 소멸자, 생성자
 template <typename T>

@@ -7,8 +7,11 @@ Diagnostics:
       performance-*,
       bugprone-*,
     ]
-    HeaderFilterRegex: '.*'
-    AnalyzeTemporaryDtors: true
+    Remove: [
+      modernize-use-trailing-return-type
+    ]
+    CheckOptions:
+      readability-identifier-naming.VariableCase: CamelCase
 
 
 ---
