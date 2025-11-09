@@ -18,15 +18,14 @@ string TxtTable::repeat_char(char c, int n) {
 string TxtTable::col_num_to_str(int n) {
   const int kAlphNum = 26;
   string s = "";
-  if (n < kAlphNum) {
-    s.push_back('A' + n);
-  } else {
-    char first = 'A' + n / kAlphNum - 1;
-    char second = 'A' + n % kAlphNum;
-    
-    s.push_back(first);
-    s.push_back(second);
-  }
+
+  ++n;
+
+  do {
+    --n; 
+    s.insert(0, 1, 'A' + n % kAlphNum);
+    n /= kAlphNum;
+  }while (n > 0);
   
   return s;
 }
