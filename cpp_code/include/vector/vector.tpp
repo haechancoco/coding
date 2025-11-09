@@ -1,12 +1,7 @@
 // #include "vector.hpp"
-
 // 소멸자, 생성자
 template <typename T>
-Vector<T>::~Vector() {
-  if (m_data) {
-    delete[] m_data;
-  }
-}
+Vector<T>::~Vector() { delete[] m_data; }
 
 template <typename T>
 Vector<T>::Vector(int n) : m_data(new T[n]), m_capacity(n), m_length(0) {}

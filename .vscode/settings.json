@@ -9,7 +9,8 @@
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
 
   "clangd.arguments": [
-    "--compile-commands-dir=${onCommand:cmake.buildDirectory}"
+    // "--compile-commands-dir=${onCommand:cmake.buildDirectory}"
+    "--compile-commands-dir=./build/clang-debug"
   ],
 
   "files.associations": {

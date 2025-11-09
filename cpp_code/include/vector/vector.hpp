@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
@@ -23,9 +21,9 @@ class Vector {
     void remove(int x);
     // 현재 벡터의 크기를 구한다.
     int size();
-
 };
 
 #include "vector.tpp"
+
 
 #endif

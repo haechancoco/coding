@@ -1,17 +1,17 @@
-Diagnostics:
-  ClangTidy:
-    Add: [
-      clang-analyzer-*,
-      readability-*,
-      modernize-*,
-      performance-*,
-      bugprone-*,
-    ]
-    Remove: [
-      modernize-use-trailing-return-type
-    ]
-    CheckOptions:
-      readability-identifier-naming.VariableCase: CamelCase
+# Diagnostics:
+#   ClangTidy:
+#     Add: [
+#       clang-analyzer-*,
+#       readability-*,
+#       modernize-*,
+#       performance-*,
+#       bugprone-*,
+#     ]
+#     Remove: [
+#       modernize-use-trailing-return-type,
+#       readability-identifier-naming,
+#       readability-identifier-length
+#     ]
 
 
 ---

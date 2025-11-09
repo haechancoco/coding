@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "excel/excel.hpp"
+#include "vector/vector.hpp"
 
 using namespace std;
 

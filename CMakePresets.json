@@ -22,6 +22,10 @@
         "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/clang_20_toolchain.cmake",
         "CMAKE_BUILD_TYPE": "Release"
       }
+    },
+    {
+      "name": "create-all-file-command_compile",
+      "displayName": "create command_compile"
     }
   ]
 }

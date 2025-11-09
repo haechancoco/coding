@@ -31,5 +31,8 @@ target_include_directories(MyTemplateLib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/i
 # target_link_libraries(my_app PRIVATE excel_lib)
 
 # (참고) 만약 t2.cpp로 별도 실행 파일을 만들고 싶다면?
-add_executable(t1 src/test/t1.cpp)
+add_executable(t1 ${CMAKE_CURRENT_SOURCE_DIR}/src/test/t1.cpp)
 target_link_libraries(t1 PRIVATE excel_lib MyTemplateLib)
+
+add_executable(t2 ${CMAKE_CURRENT_SOURCE_DIR}/src/test/t2.cpp)
+
