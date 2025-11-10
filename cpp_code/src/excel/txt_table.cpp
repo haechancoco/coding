@@ -36,11 +36,12 @@ TxtTable::TxtTable(int row, int col) : Table(row, col) {};
 
 // 함수
 string TxtTable::print_table() {
-  const int kDefaultWide = 2;
-  string total_table;
+  const string kSAButton = "    ";  // 맨 위 좌측 빈공간(Select All button)
+  const int kDefaultWide = 2;       // cell 이 비어있으면 기본적으로 2칸의 공백을 표시한다.
+  const string kDelim = " | ";      // cell 을 구분해주는 구분자이다.
 
   // i번열의 최대 문자열 길이를 구한다.
-  int* col_max_wide = new int[m_max_col_size];
+  int* col_max_wide = new int[m_max_col_size];  // 각 열에 저장된 string의 최대 길이를 저장한다.
   for (int i = 0; i < m_max_col_size; ++i) {
     unsigned int max_wide = kDefaultWide;
     for (int j = 0; j < m_max_row_size; ++j) {
@@ -52,28 +53,26 @@ string TxtTable::print_table() {
     col_max_wide[i] = max_wide;
   }
   // 맨 상단에 열 정보 표시
-  total_table += "    ";  // 맨 위 좌측 빈공간을 표현
-  int total_wide = 4;
+  string total_table = kSAButton;                       // 전체 table 을 string 으로 저장
+  int total_wide = total_table.length();                // table 의 행 길이를 저장
   for (int i = 0; i < m_max_col_size; ++i) {
-    if (col_max_wide[i]) {
-      int max_len = max(kDefaultWide, col_max_wide[i]);
-      total_table += " | " + col_num_to_str(i);
-      total_table += repeat_char(' ', max_len - col_num_to_str(i).length());
+    int max_len = max(kDefaultWide, col_max_wide[i]);   // 각 열의 cell에 저장된 string 의 최대 길이를 저장
+    total_table += kDelim + col_num_to_str(i);
+    total_table += repeat_char(' ', max_len - col_num_to_str(i).length());
 
-      total_wide += (max_len + 3);  // " | " 길이 3 더해서 반영
-    }
+    total_wide += (max_len + kDelim.length());  
   }
 
   total_table += "\n";
-  // 일단 기본적으로 최대 9999 번째 행 까지 지원한다고 생각한다.
+  // 0 번째 행부터 stirng 으로 변환
   for (int i = 0; i < m_max_row_size; ++i) {
     total_table += repeat_char('-', total_wide);
     total_table += "\n" + to_string(i + 1);
-    total_table += repeat_char(' ', 4 - to_string(i + 1).length());
-
+    total_table += repeat_char(' ', kSAButton.length() - to_string(i + 1).length());
+    // 
     for (int j = 0; j < m_max_col_size; ++j) {
       if (col_max_wide[j]) {
-        int max_len = max(2, col_max_wide[j]);
+        int max_len = max(2, col_max_wide[j]);  // 각 열의 cell에 저장된 string 의 최대 길이를 저장 
 
         string s = "";
         if (m_data_table[i][j]) {

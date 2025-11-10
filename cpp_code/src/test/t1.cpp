@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(void) {
-  TxtTable table(5, 1000);
+  TxtTable table(5, 5);
   ofstream out("test_excel.txt");
 
   table.reg_cell(new Cell("Hello~", 0, 0, &table), 0, 0);
